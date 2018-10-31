@@ -1,0 +1,1 @@
+export const string = "这里引用的是ab公共文件"

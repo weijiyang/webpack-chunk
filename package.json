@@ -1,0 +1,25 @@
+{
+  "name": "webpack-chunk",
+  "version": "1.0.0",
+  "description": "测试webpack commonChunkPlugin使用",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weijiyang/webpack-chunk.git"
+  },
+  "author": "糖少",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weijiyang/webpack-chunk/issues"
+  },
+  "homepage": "https://github.com/weijiyang/webpack-chunk#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
