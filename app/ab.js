@@ -1,1 +1,2 @@
-export const string = "这里引用的是ab公共文件"
+var string_ab = "ab文件 "
+export default string_ab

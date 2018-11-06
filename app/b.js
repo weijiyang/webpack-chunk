@@ -1,3 +1,3 @@
-var string_ab = require('./ab')
-var string_a = require('./a')
-export const string_b = string_ab + "b.js文件已经引用"
+import  string from './ab'
+var  string_b = "b文件已经引用" + string
+export default string_b
