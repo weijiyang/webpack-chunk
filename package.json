@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack"
+    "start": "webpack",
+    "analyz": "NODE_ENV=production npm_config_report=true npm run start"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "html-webpack-plugin": "^3.2.0",
     "jquery": "^3.3.1",
     "webpack": "^4.23.1",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.0"
   }
 }
