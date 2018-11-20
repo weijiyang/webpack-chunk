@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack",
-    "analyz": "NODE_ENV=production npm_config_report=true npm run start"
+    "start": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.pro.js",
+    "dev": "webpack-dev-server --devtool eval --progress --colors",
+    "analyzer": "NODE_ENV=ANALYZER npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "jquery": "^3.3.1",
     "webpack": "^4.23.1",
     "webpack-bundle-analyzer": "^3.0.3",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-merge": "^4.1.4"
   }
 }
