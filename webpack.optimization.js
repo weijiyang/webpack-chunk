@@ -1,21 +1,25 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
-module.exports = merge(common, {
-    mode: 'development',
+const analyzer = require('./webpack.bundle.analyzer.js')
+const speedMeasurePlugin = require("speed-measure-webpack-plugin")
+const smp = new speedMeasurePlugin()
+module.exports = smp.wrap(merge(common, analyzer, {
+    mode: 'production',
     optimization: {
         splitChunks: {
-            maxAsyncRequests: 2,
+            minChunks: 1,
+            maxInitialRequests: 5,
             automaticNameDelimiter: '##',
             cacheGroups: {
                 test: {
                     name: 'async',
                     chunks: "async",
-                    minSize: 1
+                    minSize: 1,
                 },
                 common: {
                     chunks: "initial",
                     minSize: 1,
-                    filename: "[name].bundle.js"
+                    filename: "common.[chunkhash].bundle.js"
                 },
                 vender: {
                     name: 'mokuai',
@@ -30,4 +34,4 @@ module.exports = merge(common, {
             name: 'manifest'
         }
     }
-});
+}))

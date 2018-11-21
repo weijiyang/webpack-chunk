@@ -1,11 +1,9 @@
 // 一个最基本的`webpack`配置文件
 const webpack = require('webpack')
-const merge = require('webpack-merge')
-const analyzer = require('./webpack.bundle.analyzer.js')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = merge(process.env.NODE_ENV == 'analyzer' ? analyzer : null, {
+module.exports = {
     entry: {
         main: __dirname + "/app/main.js",
         main1: __dirname + "/app/main1.js",
@@ -24,4 +22,4 @@ module.exports = merge(process.env.NODE_ENV == 'analyzer' ? analyzer : null, {
             inject: true
         })
     ]
-});
+}
