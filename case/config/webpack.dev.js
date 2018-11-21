@@ -1,10 +1,10 @@
 // 一个最基本的`webpack`配置文件
 const webpack = require('webpack');
 const merge = require('webpack-merge')
-const case0 = require('./config/webpack.case0.js')
-const case1 = require('./config/webpack.case1.js')
-const case2 = require('./config/webpack.case2.js')
-const case3 = require('./config/webpack.case3.js')
+const case0 = require('./webpack.case0.js')
+const case1 = require('./webpack.case1.js')
+const case2 = require('./webpack.case2.js')
+const case3 = require('./webpack.case3.js')
 
 switch (process.env.CASE) {
     case 'case0':

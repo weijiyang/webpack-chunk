@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --config webpack.dev.js",
+    "start": "webpack --config config/webpack.dev.js",
     "case0": "cross-env CASE=case0 npm run start",
     "case1": "cross-env CASE=case1 npm run start",
     "case2": "cross-env CASE=case2 npm run start",
