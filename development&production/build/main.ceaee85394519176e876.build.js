@@ -1,1 +1,0 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],[],[["./app/main.js","manifest","common##main##main1","common##main"]]]);
