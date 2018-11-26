@@ -9,9 +9,9 @@ module.exports = {
     // mode: 'development',
     mode: 'production',
     entry: {
-        main: __dirname + "/app/main.js",
+        // main: __dirname + "/app/main.js",
         main1: __dirname + "/app/main1.js",
-        main2: __dirname + "/app/main2.js"
+        // main2: __dirname + "/app/main2.js"
     },
     output: {
         path: __dirname + "/build",

@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+const path = require("path")
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 module.exports = merge(common, {
@@ -13,21 +15,40 @@ module.exports = merge(common, {
                     minSize: 1
                 },
                 common: {
+                    name:'common',
                     chunks: "initial",
                     minSize: 1,
                     filename: "[name].bundle.js"
                 },
                 vender: {
-                    name: 'mokuai',
+                    name: 'vender',
                     chunks: "initial",
                     test: /[\\/]node_modules[\\/]/,
                     priority: 10,
-                    filename: 'mokuai.[chunkhash].bundle.js'
+                    filename: 'vender.[chunkhash].bundle.js'
                 }
             }
         },
+        // runtimeChunk: "multiple"
+        // runtimeChunk: true
+        // runtimeChunk: "single"
         runtimeChunk: {
-            name: 'manifest'
+            name: "manifest"
         }
-    }
+    },
+    devServer: {
+        clientLogLevel: 'warning',
+        historyApiFallback: true,
+        hot: true,
+        compress: true,
+        host: 'localhost',
+        port: 8080,
+        publicPath: '/'
+    },
+    plugins: [
+        new webpack.DllReferencePlugin({
+            context: path.resolve(__dirname, "./dll"),
+            manifest: require(path.resolve(__dirname,'./dll',"vender-manifest.json"))
+        })
+    ]
 });

@@ -19,11 +19,11 @@ module.exports = merge(common, {
                     filename: "common.[chunkhash].bundle.js"
                 },
                 vender: {
-                    name: 'mokuai',
+                    name: 'vender',
                     chunks: "initial",
                     test: /[\\/]node_modules[\\/]/,
                     priority: 10,
-                    filename: 'mokuai.[chunkhash].bundle.js'
+                    filename: 'vender.[chunkhash].bundle.js'
                 }
             }
         },
