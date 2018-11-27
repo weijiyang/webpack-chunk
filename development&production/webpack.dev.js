@@ -45,10 +45,10 @@ module.exports = merge(common, {
         port: 8080,
         publicPath: '/'
     },
-    plugins: [
-        new webpack.DllReferencePlugin({
-            context: path.resolve(__dirname, "./dll"),
-            manifest: require(path.resolve(__dirname,'./dll',"vender-manifest.json"))
-        })
-    ]
+    // plugins: [
+    //     new webpack.DllReferencePlugin({
+    //         context: path.resolve(__dirname, "./dll"),
+    //         manifest: require(path.resolve(__dirname,'./dll',"vender-manifest.json"))
+    //     })
+    // ]
 });
