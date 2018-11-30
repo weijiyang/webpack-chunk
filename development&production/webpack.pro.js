@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+const path = require('path')
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 module.exports = merge(common, {
@@ -30,5 +32,11 @@ module.exports = merge(common, {
         runtimeChunk: {
             name: 'manifest'
         }
-    }
+    },
+    plugins: [
+        new webpack.DllReferencePlugin({
+            context: path.resolve(__dirname, "./dll"),
+            manifest: require(path.resolve(__dirname,'./dll',"vender-manifest.json"))
+        })
+    ]
 });

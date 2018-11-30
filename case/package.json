@@ -1,7 +1,7 @@
 {
   "name": "webpack-chunk",
   "version": "1.0.0",
-  "description": "测试webpack commonChunkPlugin使用",
+  "description": "webpack chunk分享",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

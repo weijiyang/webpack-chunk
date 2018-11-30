@@ -46,7 +46,6 @@ module.exports = {
         new VueLoaderPlugin(),
         new CleanWebpackPlugin('build/*.*'),
         new htmlWebpackPlugin({
-            title: '这里是标题',
             filename: 'main.html',
             template: 'index.html',
             inject: true
