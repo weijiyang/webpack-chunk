@@ -37,18 +37,18 @@ module.exports = merge(common, {
         }
     },
     devServer: {
-        clientLogLevel: 'warning',
         historyApiFallback: true,
-        hot: true,
         compress: true,
         host: 'localhost',
         port: 8080,
-        publicPath: '/'
+        overlay: true,
+        openPage: 'build/main.html'
     },
     plugins: [
         new webpack.DllReferencePlugin({
             context: path.resolve(__dirname, "./dll"),
             manifest: require(path.resolve(__dirname,'./dll',"vender-manifest.json"))
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 });

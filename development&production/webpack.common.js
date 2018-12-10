@@ -9,38 +9,51 @@ module.exports = {
         // main: __dirname + "/app/main.js",
         // main1: __dirname + "/app/main1.js",
         // main2: __dirname + "/app/main2.js"
-        app: __dirname + "/app/app.js"
+        app: path.join(__dirname, "/app/views/app.js")
     },
     output: {
-        path: __dirname + "/build",
+        path: path.join(__dirname, "/build"),
         filename: "[name].[hash].build.js",
-    },
-    module: {
-        rules: [{
-                test: /\.js$/,
-                use: 'babel-loader',
-                exclude: /node_modules/
-            },
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
-                exclude: /node_modules/
-            },
-            {
-                test: /\.styl$/,
-                use: ['style-loader', 'css-loader', 'stylus-loader'],
-                exclude: /node_modules/
-            },
-            {
-                test: /\.vue$/,
-                loader: 'vue-loader'
-            }
-        ]
+        publicPath: '/build',
     },
     resolve: {
+        extensions: ['.js', '.vue'],
         alias: {
-            'vue': 'vue/dist/vue.js'
+          'vue$': 'vue/dist/vue.esm.js',
+          '@': __dirname
         }
+      },
+    module: {
+        rules: [
+            {
+              test: /\.vue$/,
+              loader: 'vue-loader'
+            },
+            {
+              test: /\.js$/,
+              loader: 'babel-loader'
+            },
+            {
+              test: /\.css$/,
+              loader: 'style-loader!css-loader'
+            },
+            {
+              test: /\.scss$/,
+              loader: 'style-loader!css-loader!sass-loader'
+            },
+            {
+              test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+              loader: 'url-loader'
+            },
+            {
+              test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+              loader: 'url-loader'
+            },
+            {
+              test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+              loader: 'url-loader'
+            }
+        ]
     },
     plugins: [
         new VueLoaderPlugin(),

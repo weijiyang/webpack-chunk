@@ -6,20 +6,11 @@ import elementUI from 'element-ui'
 Vue.use(elementUI)
 
 console.log( "this is main1 ", string_a + string_b + "main1文件已引用~~~~~~~~~~~" )
-setTimeout(function() {
-    require.ensure([], function(require) {
-        require('./async.js');
-    });
-    require.ensure([], function(require) {
-        require('./async.js');
-        console.log("lalal")
-    });
-    require.ensure([], function(require) {
-        require('./async.js');
-        console.log("lalal123")
-    });
-    require.ensure([], function(require) {
-        require('./async.js');
-        console.log("lalal2345")
-    });
-}, 3000)
+require.ensure([], function(require) {
+    require('./async.js');
+    console.log("引用 async.js 文件")
+});
+require.ensure([], function(require) {
+    require('./async1.js');
+    console.log("引用 async1.js 文件")
+});
