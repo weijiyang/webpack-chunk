@@ -7,27 +7,28 @@ module.exports = merge(common, {
     optimization: {
         splitChunks: {
             minChunks: 1,
-            maxInitialRequests: 5,
+            // maxInitialRequests: 10,
+            maxAsyncRequests: 1,
             automaticNameDelimiter: '##',
-            cacheGroups: {
-                test: {
-                    name: 'async',
-                    chunks: "async",
-                    minSize: 1
-                },
-                common: {
-                    chunks: "initial",
-                    minSize: 1,
-                    filename: "common.[chunkhash].bundle.js"
-                },
-                vender: {
-                    name: 'vender',
-                    chunks: "initial",
-                    test: /[\\/]node_modules[\\/]/,
-                    priority: 10,
-                    filename: 'vender.[chunkhash].bundle.js'
-                }
-            }
+            // cacheGroups: {
+            //     test: {
+            //         name: 'async',
+            //         chunks: "async",
+            //         minSize: 1
+            //     },
+            //     common: {
+            //         chunks: "initial",
+            //         minSize: 1,
+            //         filename: "common.bundle.js"
+            //     },
+            //     vender: {
+            //         name: 'vender',
+            //         chunks: "initial",
+            //         test: /[\\/]node_modules[\\/]/,
+            //         priority: 10,
+            //         filename: 'vender.bundle.js'
+            //     }
+            // }
         },
         runtimeChunk: {
             name: 'manifest'

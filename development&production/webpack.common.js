@@ -13,7 +13,7 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, "/build"),
-        filename: "[name].[hash].build.js",
+        filename: "[name].build.js",
         publicPath: '/build',
     },
     resolve: {
@@ -54,6 +54,9 @@ module.exports = {
               loader: 'url-loader'
             }
         ]
+    },
+    performance: {
+      hints: false
     },
     plugins: [
         new VueLoaderPlugin(),

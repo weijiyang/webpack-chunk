@@ -6,7 +6,7 @@ module.exports = merge(common, {
     mode: 'development',
     optimization: {
         splitChunks: {
-            maxAsyncRequests: 2,
+            maxInitialRequests: 5,
             automaticNameDelimiter: '##',
             cacheGroups: {
                 test: {
@@ -40,7 +40,7 @@ module.exports = merge(common, {
         historyApiFallback: true,
         compress: true,
         host: 'localhost',
-        port: 8080,
+        port: 8888,
         overlay: true,
         openPage: 'build/main.html'
     },
