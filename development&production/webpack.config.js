@@ -26,30 +26,33 @@ module.exports = {
             inject: true
         })
     ],
+    performance: {
+        hints: false
+    },
     optimization: {
         splitChunks: {
             minSize: 1,
             minChunks: 1,
             maxInitialRequests: 1,
-            // maxAsyncRequests: 1,
+            maxAsyncRequests: 1,
             automaticNameDelimiter: '##',
-            // cacheGroups: {
-            //     test: {
-            //         name: 'async',
-            //         chunks: "async",
-            //     },
-            //     common: {
-            //         chunks: "initial",
-            //         filename: "[name].bundle.js"
-            //     },
-            //     vender: {
-            //         name: 'vender',
-            //         chunks: "initial",
-            //         test: /[\\/]node_modules[\\/]/,
-            //         priority: 10,
-            //         filename: '[name].bundle.js'
-            //     }
-            // }
+            cacheGroups: {
+                test: {
+                    name: 'async',
+                    chunks: "async",
+                },
+                common: {
+                    chunks: "initial",
+                    filename: "[name].bundle.js"
+                },
+                vender: {
+                    name: 'vender',
+                    chunks: "initial",
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: 10,
+                    filename: '[name].bundle.js'
+                }
+            }
         },
         runtimeChunk: {
             name: 'manifest'

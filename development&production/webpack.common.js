@@ -31,7 +31,10 @@ module.exports = {
             },
             {
               test: /\.js$/,
-              loader: 'babel-loader'
+              loader: 'babel-loader',
+              options: {
+                plugins: ['syntax-dynamic-import']
+              }
             },
             {
               test: /\.css$/,

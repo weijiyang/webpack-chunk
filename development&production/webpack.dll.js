@@ -4,7 +4,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const vendors = [
     'jquery',
     'element-ui',
-    'vue'
+    'vue',
+    'v-charts',
+    'echarts'
 ];
 module.exports = {
     mode: 'development',

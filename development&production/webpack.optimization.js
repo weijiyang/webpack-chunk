@@ -19,14 +19,14 @@ module.exports = smp.wrap(merge(common, analyzer, {
                 common: {
                     chunks: "initial",
                     minSize: 1,
-                    filename: "common.[chunkhash].bundle.js"
+                    filename: "common.bundle.js"
                 },
                 vender: {
                     name: 'vender',
                     chunks: "initial",
                     test: /[\\/]node_modules[\\/]/,
                     priority: 10,
-                    filename: 'vender.[chunkhash].bundle.js'
+                    filename: 'vender.bundle.js'
                 }
             }
         },

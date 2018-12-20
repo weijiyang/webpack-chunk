@@ -6,7 +6,6 @@ module.exports = merge(common, {
     mode: 'development',
     optimization: {
         splitChunks: {
-            maxInitialRequests: 5,
             automaticNameDelimiter: '##',
             cacheGroups: {
                 test: {
@@ -22,16 +21,13 @@ module.exports = merge(common, {
                 },
                 vender: {
                     name: 'vender',
-                    chunks: "initial",
+                    chunks: "all",
                     test: /[\\/]node_modules[\\/]/,
                     priority: 10,
                     filename: 'vender.[chunkhash].bundle.js'
                 }
             }
         },
-        // runtimeChunk: "multiple"
-        // runtimeChunk: true
-        // runtimeChunk: "single"
         runtimeChunk: {
             name: "manifest"
         }
@@ -42,13 +38,15 @@ module.exports = merge(common, {
         host: 'localhost',
         port: 8888,
         overlay: true,
-        openPage: 'build/main.html'
+        openPage: 'build/main.html',
+        // hot: true,
+        // inline: true
     },
     plugins: [
         new webpack.DllReferencePlugin({
             context: path.resolve(__dirname, "./dll"),
             manifest: require(path.resolve(__dirname,'./dll',"vender-manifest.json"))
         }),
-        new webpack.HotModuleReplacementPlugin()
+        // new webpack.HotModuleReplacementPlugin()
     ]
 });

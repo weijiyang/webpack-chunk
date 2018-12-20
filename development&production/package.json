@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development webpack --config webpack.dev.js --hide-modules",
+    "dev": "webpack-dev-server --inline --hot --progress --open --quiet --config webpack.dev.js",
     "dll": "webpack --config webpack.dll.js",
-    "dev": "webpack-dev-server --inline --progress --open --quiet --config webpack.dev.js",
     "build": "webpack --config webpack.pro.js --hide-modules",
     "config": "webpack --hide-modules",
-    "optimization": "cross-env NODE_ENV=analyzer npm_config_report=true webpack --config webpack.optimization.js"
+    "op": "webpack --config webpack.optimization.js --hide-modules"
   },
   "repository": {
     "type": "git",
@@ -25,10 +25,12 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "child_process": "^1.0.2",
     "clean-webpack-plugin": "^0.1.19",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
+    "echarts": "^4.2.0-rc.2",
     "element-ui": "^2.4.11",
     "html-webpack-plugin": "^3.2.0",
     "jquery": "^3.3.1",
@@ -39,6 +41,7 @@
     "style-loader": "^0.23.1",
     "stylus-loader": "^3.0.2",
     "url-loader": "^1.1.2",
+    "v-charts": "^1.19.0",
     "vue": "^2.5.17",
     "vue-loader": "^15.4.2",
     "vue-router": "^3.0.2",

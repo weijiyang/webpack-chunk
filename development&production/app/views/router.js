@@ -7,9 +7,17 @@ export default new Router({
   routes: [
     {
       path: '/home',
-      name: 'home',
-      component: require('@/app/views/index.vue').default,
+      component: require('@/app/views/index.vue').default
     },
-    { path: '*', redirect: '/home' }
+    {
+      path: '/webpack',
+      name: 'webpack',
+      component: () => import(/* webpackChunkName: "vue-webpack-ui" */ '@/app/views/webpack.vue')
+    },
+    {
+      path: '/async',
+      name: 'async',
+      component: resolve => require.ensure([], () => resolve(require('@/app/views/async-charts.vue').default), 'async-charts')
+    }
   ]
 })
