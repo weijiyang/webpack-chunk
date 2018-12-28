@@ -46,7 +46,7 @@ module.exports = merge(
                         chunks: "all",
                         test: /[\\/]node_modules[\\/]/,
                         priority: 10,
-                        filename: 'vender.[chunkhash].bundle.js'
+                        filename: 'vender.bundle.js'
                     }
                 }
             },
