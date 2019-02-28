@@ -2,7 +2,9 @@
 
 还在为学不会webpack而发愁么，还在因为概念过多而烦恼嘛 欢迎大家来看本次分享
 
- (๑•̀ㅂ•́)و✧详细内容可查阅ppt [demo & ppt](https://github.com/meicai-fe/fe-training/tree/master/webpack-chunk) 或 [webpack chunk分享视频 by糖·少](https://pan.baidu.com/s/195e4bhhBj-0ES39rXfE6SQ 提取码: x5nc 复制这段内容后打开百度网盘手机App，操作更方便哦)
+ (๑•̀ㅂ•́)و✧ 详细内容可查阅ppt [demo & ppt](https://github.com/meicai-fe/fe-training/tree/master/webpack-chunk)
+ 
+ [webpack chunk分享视频](https://pan.baidu.com/s/195e4bhhBj-0ES39rXfE6SQ) 
 
 Thanks ！
 
